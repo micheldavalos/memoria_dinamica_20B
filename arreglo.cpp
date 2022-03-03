@@ -17,12 +17,35 @@ Arreglo::Arreglo(const Arreglo& a)
         arreglo[i] = a.at(i);
     }
     
+    cont = a.tam;
     tam = a.tam;
 }
 
 Arreglo::~Arreglo()
 {
     delete[] arreglo;
+}
+
+Arreglo& Arreglo::operator=(const Arreglo& a)
+{
+    if (this != &a) {
+        int *nuevo = new int[tam+MAX];
+
+        for (size_t i = 0; i < cont; i++) {
+            nuevo[i] = arreglo[i];
+        }
+
+        // copy(a.arreglo, a.arreglo + a.cont, nuevo);
+
+        delete[] arreglo;
+
+        arreglo = nuevo;
+        
+        cont = a.tam;
+        tam = a.tam;
+    }
+
+    return *this;
 }
 
 void Arreglo::insertar_final(int v)

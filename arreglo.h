@@ -16,6 +16,8 @@ public:
     Arreglo(const Arreglo& a);
     ~Arreglo();
     
+    Arreglo& operator=(const Arreglo& a);
+    
     void insertar_final(int v);
     void insertar_inicio(int v);
     size_t size();
@@ -24,7 +26,7 @@ public:
     {
         return arreglo[p];
     }
-    
+
     int at(size_t p) const
     {
         return arreglo[p];
