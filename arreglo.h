@@ -17,10 +17,10 @@ public:
     ~Arreglo();
     
     Arreglo& operator=(const Arreglo& a);
-    
+
     void insertar_final(int v);
     void insertar_inicio(int v);
-    size_t size();
+    size_t size() const;
 
     int operator[](size_t p)
     {

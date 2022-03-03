@@ -29,10 +29,10 @@ Arreglo::~Arreglo()
 Arreglo& Arreglo::operator=(const Arreglo& a)
 {
     if (this != &a) {
-        int *nuevo = new int[tam+MAX];
+        int *nuevo = new int[a.tam];
 
         for (size_t i = 0; i < cont; i++) {
-            nuevo[i] = arreglo[i];
+            nuevo[i] = a.at(i);
         }
 
         // copy(a.arreglo, a.arreglo + a.cont, nuevo);
@@ -68,7 +68,7 @@ void Arreglo::insertar_inicio(int v)
     cont++;
 }
 
-size_t Arreglo::size()
+size_t Arreglo::size() const
 {
     return cont;
 }
