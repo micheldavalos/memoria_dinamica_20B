@@ -7,6 +7,19 @@ Arreglo::Arreglo()
     tam = MAX;
 }
 
+Arreglo::Arreglo(const Arreglo& a)
+{
+    arreglo = new int[a.tam];
+    cont = 0;
+
+    for (size_t i = 0; i < a.tam; i++)
+    {
+        arreglo[i] = a.at(i);
+    }
+    
+    tam = a.tam;
+}
+
 Arreglo::~Arreglo()
 {
     delete[] arreglo;

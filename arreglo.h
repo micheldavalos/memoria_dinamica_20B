@@ -13,11 +13,19 @@ class Arreglo
 
 public:
     Arreglo();
+    Arreglo(const Arreglo& a);
     ~Arreglo();
+    
     void insertar_final(int v);
     void insertar_inicio(int v);
     size_t size();
+
     int operator[](size_t p)
+    {
+        return arreglo[p];
+    }
+    
+    int at(size_t p) const
     {
         return arreglo[p];
     }
